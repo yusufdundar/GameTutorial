@@ -4,6 +4,7 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsView>
 #include "MyRect.h"
+#include <QTimer>
 
 int main(int argc, char *argv[])
 {
@@ -27,5 +28,12 @@ int main(int argc, char *argv[])
     view->setFixedSize(800,600);
     scene->setSceneRect(0,0,800,600);
     player->setPos(view->width()/2 - player->rect().width()/2, view->height() - player->rect().height());
+
+    QTimer *timer = new QTimer();
+    QObject::connect(timer,SIGNAL(timeout()),player,SLOT(spawn()));
+    timer->start(2000);
+
+
+
     return a.exec();
 }

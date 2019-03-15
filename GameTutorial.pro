@@ -28,11 +28,13 @@ CONFIG += sdk_no_version_check
 SOURCES += \
         main.cpp \
     MyRect.cpp \
-    Bullet.cpp
+    Bullet.cpp \
+    Enemy.cpp
 
 HEADERS += \
     MyRect.h \
-    Bullet.h
+    Bullet.h \
+    Enemy.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
